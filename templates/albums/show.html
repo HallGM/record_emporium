@@ -1,0 +1,19 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %} 
+{% block content %}
+
+<div class="album-details">
+  <h2>{{album.title}}</h2>
+  <hr />
+  <p>Artist: {{album.artist.name}}</p>
+  <p>{{album.year}}</p>
+  <p>There are {{album.stock_level}} available</p>
+  <form class="delete-form" action="/albums/{{album.id}}/delete" method="POST">
+    <button class="trash-button">
+        <i
+          class="fa fa-trash-o fa-3x"
+          aria-hidden="true"
+        ></i>
+</form>
+</div>
+{% endblock %}
